@@ -46,57 +46,23 @@ public class TaskController {
     }
     
     @GetMapping("/edit/{id}")
-    public String showEditTaskForm(@PathVariable("id") int id, Model model) {
+    public String showEditTaskForm(@PathVariable int id, Model model) {
         Task task = taskService.getTaskById(id);
         model.addAttribute("task", task);
         return "new";
     }
 
     @PostMapping("/update/{id}")
-    public String updateTask(@PathVariable("id") int id, Task task) {
+    public String updateTask(@PathVariable int id, Task task) {
         taskService.updateTask(id, task);
-        return "redirect:/"; // Redirige a la página de lista de tareas después de actualizar
+        return "redirect:/"; 
     }
 
     @GetMapping("/delete/{id}")
     public String deleteTask(@PathVariable("id") int id) {
         taskService.deleteTask(id);
-        return "redirect:/"; // Redirige a la página de lista de tareas después de eliminar
-    }
-    
-    // Metodos HTTP para ser consumidos desde el frontend
-    /*@GetMapping("/")
-    public String listar(Model model) {
-        List<Task> tasks = taskService.getAllTasks();
-        model.addAttribute("task", tasks);
-        return "index";
-    }
-
-    //Creamos el método para agregar new
-    @GetMapping("/new")
-    public String agregar(Model model){
-        model.addAttribute("task", new Task());
-        return "newtask";
-    }
-    
-    @PostMapping("/save")
-    public String save(@Valid Task p, Model model){
-        taskService.createTask(p);
         return "redirect:/";
     }
-
-    @GetMapping("/edit/{id}")
-    public String editar( Model model, @PathVariable int id) {
-        Task task = taskService.getTaskById(id);
-        model.addAttribute("task", task);
-        return "newtask";
-    }
-    
-    @GetMapping("delete/{id}")
-    public String delete(Model model,@PathVariable int id){
-        taskService.deleteTask(id);
-        return "redirect:/";
-    }*/
     
     
     

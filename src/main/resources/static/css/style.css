@@ -4,13 +4,20 @@
     margin: 0;
     box-sizing: border-box;
 }
+body{
+    background: #DFEEEE;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    height: 100%;
+}
 
 .card {
     border: 1px solid #ccc;
     border-radius: 5px;
     padding: 10px;
     margin-bottom: 20px;
-    background-color: springgreen;
+    background-color: #4DBDEB
     
     
 }
@@ -21,7 +28,7 @@
     height: 50px;
     border-radius: 50%;
     border: 1px solid;
-    background-color: darkgoldenrod; 
+    background-color: #FFE08C;
     color: black; 
     font-size: 24px;
     font-weight:  bold;
